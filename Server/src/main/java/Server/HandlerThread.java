@@ -99,24 +99,25 @@ public class HandlerThread extends Thread {//wątek do obsługi klienta
 
         List<HandlerThread> workerList = serverColections.getWorkerList();
 
-        for(HandlerThread worker : workerList){
+        for (HandlerThread worker : workerList){
             if (b.getIdKlienta(odbiorca)!=0) {
                 if (b.getIDZnajomych(b.getIdKlienta(login)).contains(b.getIdKlienta(odbiorca))) {
-                    if(odbiorca.equalsIgnoreCase(worker.getLogin())){
-                        Wiadomosc wyslana=new Wiadomosc(tresc, b.getIdKlienta(odbiorca), new Date(),1);
-                        b.dodajWiadomosc(b.getIdKlienta(login), wyslana);
-                        System.out.println("Wyslana wiadomosc zapisana \n");
-                    }else if(login.equalsIgnoreCase(worker.getLogin())){
-                        Wiadomosc odebrana=new Wiadomosc(tresc, b.getIdKlienta(login), new Date(),0);
+                    if (login.equalsIgnoreCase(worker.getLogin())) {
+                        var odebrana = new Wiadomosc(tresc, b.getIdKlienta(login), new Date(),0);
                         b.dodajWiadomosc(b.getIdKlienta(odbiorca), odebrana);
-                        System.out.println("Odebrana wiadomosc zapisana \n");
+
+                        var wyslana = new Wiadomosc(tresc, b.getIdKlienta(odbiorca), new Date(),1);
+                        b.dodajWiadomosc(b.getIdKlienta(login), wyslana);
+
+                        System.out.println("Wiadomosc zapisana \n");
+                        break;
                     }
 
                     //zapis wiadomosci w bazach odbiorcy i nadawcy
-                } else{
+                } else {
                    System.err.println("Wiadomosc nie zostala wyslana - nie jestescie znajomymi\n");
                 }
-            }else {
+            } else {
                 System.err.println("Wiadomosc nie zostala wyslana - odbiorca nie istnieje\n");
             }
         }
@@ -349,12 +350,9 @@ public class HandlerThread extends Thread {//wątek do obsługi klienta
     }
 
     private void handleLogoff() throws IOException {//obsluga wylogowania
-        b=new Baza();
+        clientSocket.close();
         serverColections.removeWorker(this);
-        List<HandlerThread> workerList = serverColections.getWorkerList();
-
         System.out.println("Wylogowal sie poprawnie "+login);
-        b.closeConnection();
     }
 
     public String getLogin() {//zwraca login klienta
