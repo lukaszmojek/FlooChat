@@ -1,0 +1,57 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#loginBody
+{
+    -fx-background-image:url('../images/mainLoginBackground.png');   
+}
+
+#loginPane
+{
+    -fx-background-image:url("../images/loginPane.png");   
+}
+
+#registerPane
+{
+	-fx-background-image:url("../images/registerPane.png");   
+}
+
+#registerMainPane
+{
+	-fx-background-image:url("../images/mainRegisterBackground.png"); 
+}
+
+#recoverMainPane
+{
+    -fx-background-image:url("../images/backgroundChangeData.png");
+}
+
+#changeDataMainPane
+{
+    -fx-background-image:url("../images/backgroundChangeData.png");
+}
+
+#changePasswordMainPane
+{
+    -fx-background-image:url("../images/backgroundChangeData.png");
+}
+
+
+
+
+.text-area {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+

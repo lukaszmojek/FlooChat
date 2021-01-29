@@ -1,0 +1,11 @@
+Eclipse Java IDE 2020-09
+jdk-15.01
+
+Project -> Build Path -> Add Libraries -> User Library -> User Libraries -> New -> (nazwa FX) -> Add External Jars -> Wszystkie biblioteki stad zaznaczyc [JFX\javafx-sdk-11.0.2\lib] -> Apply and close
+ 
+Window -> Preferencjes -> JavaFX -> Scene Builder Browse -> C:\Program Files\SceneBuilder\SceneBuilder.exe
+ 
+Main -> Run as -> run configurations -> arguments -> VM arguments 
+--module-path "D:\Programs\JFX\javafx-sdk-11.0.2\lib" --add-modules javafx.controls,javafx.fxml
+
+Jak ktoś nie ma JFX to tu udostepnilem: https://drive.google.com/file/d/1jCJavEXbMIt2g5HBtHgNlSiUPrZ0wtYV/view?usp=sharing

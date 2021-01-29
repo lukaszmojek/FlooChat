@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
+   <children>
+      <Pane fx:id="loginBody" prefHeight="800.0" prefWidth="800.0" stylesheets="@application.css">
+         <children>
+            <Pane fx:id="loginPane" layoutX="164.0" layoutY="212.0" prefHeight="298.0" prefWidth="513.0" stylesheets="@application.css">
+               <children>
+                  <PasswordField fx:id="passwordField" layoutX="132.0" layoutY="186.0" prefHeight="35.0" prefWidth="250.0" promptText="password" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="14.0" />
+                     </font></PasswordField>
+                  <TextField fx:id="emailField" layoutX="132.0" layoutY="114.0" prefHeight="35.0" prefWidth="250.0" promptText="nick" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <Button fx:id="loginButton" layoutX="296.0" layoutY="236.0" mnemonicParsing="false" onAction="#loginButtonClick" prefHeight="35.0" prefWidth="86.0" style="-fx-background-color: red;" text="Zaloguj się" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Label layoutX="131.0" layoutY="78.0" text="Nazwa użytkownika" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="96.0" layoutY="227.0" />
+                  <Label fx:id="tablet_label" layoutX="96.0" layoutY="227.0" text=" " textFill="WHITE" />
+                  <Label layoutX="132.0" layoutY="149.0" text="Hasło:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fx:id="muggles_view" fitHeight="155.0" fitWidth="350.0" layoutX="436.0" layoutY="631.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="test" text="Floo Chat" textFill="RED">
+            </Label>
+            <Hyperlink fx:id="recoverPasswordHyperlink" layoutX="164.0" layoutY="510.0" onAction="#recoverPasswordHyperlinkClick" text="Nie pamiętasz hasła?" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink fx:id="registerHyperlink" layoutX="164.0" layoutY="545.0" onAction="#registerHyperlinkClick" text="Załóż konto" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

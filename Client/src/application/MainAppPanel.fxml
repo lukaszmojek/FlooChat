@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainAppController">
+   <children>
+      <Pane fx:id="mainAppPane" prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: yellow;">
+         <children>
+            <Button fx:id="logoutButton" layoutX="11.0" layoutY="756.0" mnemonicParsing="false" onAction="#logoutButtonClick" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: red;" text="Wyloguj" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="welcomeLabel" layoutX="11.0" layoutY="14.0" prefHeight="43.0" prefWidth="614.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Pane layoutX="99.0" layoutY="88.0" prefHeight="567.0" prefWidth="602.0">
+               <children>
+                  <ListView fx:id="friendListView" layoutX="14.0" layoutY="34.0" prefHeight="402.0" prefWidth="291.0" />
+                  <Button fx:id="addFriendButton" layoutX="173.0" layoutY="454.0" mnemonicParsing="false" onAction="#addFriendButtonClick" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: red;" text="Dodaj znajomego" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <TextField fx:id="addFriendsField" layoutX="14.0" layoutY="454.0" promptText="e-mail znajomego" />
+                  <Button fx:id="deleteFriendButton" layoutX="173.0" layoutY="485.0" mnemonicParsing="false" onAction="#deleteFriendButtonClick" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: red;" text="Usuń znajomego" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="refreshFriendButton" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#refreshFriendButtonClick" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: red;" text="Odswież znajomych" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="chatButton" layoutX="152.0" layoutY="2.0" mnemonicParsing="false" onAction="#chatButtonClick" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: red;" text="Czatuj" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="groupChatButton" layoutX="319.0" layoutY="2.0" mnemonicParsing="false" onAction="#groupChatButtonClick" style="-fx-background-color: #FFF0;" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="416.0" layoutY="419.0" prefHeight="17.0" prefWidth="248.0" text="Czat domu" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="changeDataButton" layoutX="411.0" layoutY="756.0" mnemonicParsing="false" onAction="#changeDataButtonClick" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: red;" text="Zmien dane" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteAccountButton" layoutX="607.0" layoutY="756.0" mnemonicParsing="false" onAction="#deleteAccountButtonClick" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: red;" text="Usuń konto" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="changePasswordButton" layoutX="210.0" layoutY="756.0" mnemonicParsing="false" onAction="#changePasswordButtonClick" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: red;" text="Zmień hasło" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
