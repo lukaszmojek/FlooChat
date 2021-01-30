@@ -24,31 +24,38 @@ public class ChatController implements Initializable{
                 {
                     synchronized(textArea)
                     {
-                        String loginKlient=Main.user.email;
-                        String loginZnajomy = Main.user.znajomy;
-                        textArea.clear();
-                        List<String> wiadomosci = new ArrayList<String>();
-                        wiadomosci = Main.client.getMessage(loginKlient, loginZnajomy);
-                        String who;
+                        try {
+                            String loginKlient=Main.user.email;
+                            String loginZnajomy = Main.user.znajomy;
+                            javafx.application.Platform.runLater( () -> textArea.clear());
+                            List<String> wiadomosci = new ArrayList<String>();
+                            wiadomosci = Main.client.getMessage(loginKlient, loginZnajomy);
+                            String who;
 
-                        for(int i=0; i<wiadomosci.size(); i++)
-                        {
-                            String wiadomosc=wiadomosci.get(i) + "\n";
+                            for(int i=0; i<wiadomosci.size(); i++)
+                            {
+                                String wiadomosc=wiadomosci.get(i) + "\n";
 
-                            if(wiadomosc.startsWith("1"))
-                                who = "ja: ";
-                            else
-                                who = loginZnajomy + ": ";
+                                if(wiadomosc.startsWith("1"))
+                                    who = "ja: ";
+                                else
+                                    who = loginZnajomy + ": ";
 
-                            textArea.appendText(who + wiadomosc.substring(1));
+                                var doWyswietlenia = who + wiadomosc.substring(1);
+                                javafx.application.Platform.runLater( () -> textArea.appendText(doWyswietlenia));
+                            }
+                        } catch (Exception e) {
+                            Thread.sleep(1000);
                         }
+
                     }
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
                 }
             }
             catch (Exception e) {
             }
         }
+
         public void setUiElement(TextArea textarea)
         {
             this.textArea = textarea;

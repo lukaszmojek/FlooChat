@@ -161,12 +161,11 @@ public class ChatClient {
         String response = bufferedIn.readLine();//czekaj na potwierdzenie logowania lub blad
         System.out.println("Odpowiedz serwera: " + "''"+response+"''");
 
-        if("Zalogowano".equalsIgnoreCase(response)){//jesli serwer zwroci zalogowano to zako�cz i zwroc true
-
+        if ("Zalogowano".equalsIgnoreCase(response)) {//jesli serwer zwroci zalogowano to zako�cz i zwroc true
             return true;
         }
-        else{return false;}
 
+        return false;
     }
 
     public String recoverPassword(String email, String name, String lastName) throws IOException

@@ -385,15 +385,15 @@ public class HandlerThread extends Thread {//wątek do obsługi klienta
     }
 
     private void handleGettingMessages(OutputStream outputStream, String[] tokens) throws IOException {//pobiera i wysyła klientowi wiadomosci
-        b=new Baza();
-        if(tokens.length==3)
+        b = new Baza();
+        if (tokens.length == 3)
         {
             String klient = tokens[1];//login odbiorcy
             String znajomy = tokens[2];//tresc wiadomosci
 
             int idKlienta=b.getIdKlienta(klient);
             int idZnajomy=b.getIdKlienta(znajomy);
-            List<Wiadomosc> wiad=new ArrayList<Wiadomosc>();
+            List<Wiadomosc> wiad = new ArrayList<Wiadomosc>();
             wiad=b.getWiadomosci(idKlienta, idZnajomy);
             int size = wiad.size();
             System.out.println("rozmiar tablicy: " + size) ;
